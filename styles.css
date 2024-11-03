@@ -1,8 +1,8 @@
-/* Основные стили для фона и выравнивания */
+/* Основные стили для темной темы */
 body {
   font-family: Arial, sans-serif;
-  background-color: #f9f9f9;
-  color: #333;
+  background-color: #121212;
+  color: #e0e0e0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,38 +10,66 @@ body {
   margin: 0;
 }
 
-/* Стили для списка ссылок */
-ul {
-  list-style-type: none;
+/* Контейнер для списка, чтобы центрировать элементы вертикально */
+ol {
+  list-style-type: none; /* Убираем стандартную нумерацию */
+  counter-reset: item;
   padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: flex-start; /* Выравнивание по левому краю */
 }
 
+/* Стили для элемента списка, добавляем счетчик для нумерации */
 li {
-  margin: 10px 0;
+  display: flex;
+  align-items: center;
+}
+
+li::before {
+  content: counter(item) '. '; /* Автоматическая нумерация */
+  counter-increment: item;
+  color: #e0e0e0;
+  font-size: 1.2rem;
+  margin-right: 10px;
 }
 
 /* Стили для ссылок */
 a {
   font-size: 1.2rem;
-  color: #0073e6;
+  color: #e0e0e0;
   text-decoration: none;
-  padding: 8px 12px;
-  border: 1px solid transparent;
+  padding: 10px 20px;
   border-radius: 5px;
+  background: #333;
+  display: inline-block;
   transition: 0.3s;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  width: 150px;
+}
+
+/* Градиентный эффект при наведении */
+a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(90deg, red, orange, yellow, green, cyan, blue, violet);
+  transition: 0.5s;
+  z-index: -1;
+}
+
+a:hover::before {
+  left: 0;
 }
 
 a:hover {
   color: #ffffff;
-  background-color: #0073e6;
-  border-color: #0073e6;
-  text-decoration: underline;
-}
-
-/* Стили для эффекта при наведении */
-a:focus,
-a:hover {
-  background-color: #005bb5;
-  color: #ffffff;
-  border: 1px solid #005bb5;
+  background: none;
 }
