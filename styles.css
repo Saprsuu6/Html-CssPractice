@@ -1,0 +1,47 @@
+/* Основные стили для фона и выравнивания */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* Стили для списка ссылок */
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin: 10px 0;
+}
+
+/* Стили для ссылок */
+a {
+  font-size: 1.2rem;
+  color: #0073e6;
+  text-decoration: none;
+  padding: 8px 12px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+a:hover {
+  color: #ffffff;
+  background-color: #0073e6;
+  border-color: #0073e6;
+  text-decoration: underline;
+}
+
+/* Стили для эффекта при наведении */
+a:focus,
+a:hover {
+  background-color: #005bb5;
+  color: #ffffff;
+  border: 1px solid #005bb5;
+}
